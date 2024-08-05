@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarot Card Reader</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Tarot Card Reader</h1>
+    <div class="principal">
+        <button onclick="selectANumber()">Select a Card</button>
+        <button onclick="signEq()">Show Zodiac Sign</button>
+        <button onclick="findCardType()">Search for a Card</button>
+    </div>
+    <div id="cardDisplay" class="hide">
+        <h2>Selected Card:</h2>
+        <img id="cardImage" alt="Tarot Card">
+    </div>
+    <div id="zodiacSignDisplay" class="hide">
+        <h2>Zodiac Sign:</h2>
+        <p id="zodiacSign"></p>
+    </div>
+    <div id="cardSearchDisplay" class="hide">
+        <h2>Card Search Result:</h2>
+        <p id="cardSearchResult"></p>
+    </div>
+    <div class="circle-container">
+        <div id="signAries" class="sign">Aries</div>
+        <div id="signTauro" class="sign">Tauro</div>
+        <div id="signGéminis" class="sign">Géminis</div>
+        <div id="signCáncer" class="sign">Cáncer</div>
+        <div id="signLeo" class="sign">Leo</div>
+        <div id="signVirgo" class="sign">Virgo</div>
+        <div id="signLibra" class="sign">Libra</div>
+        <div id="signEscorpio" class="sign">Escorpio</div>
+        <div id="signSagitario" class="sign">Sagitario</div>
+        <div id="signCapricornio" class="sign">Capricornio</div>
+        <div id="signAcuario" class="sign">Acuario</div>
+        <div id="signPiscis" class="sign">Piscis</div>
+    </div>
+    <script src="script.js"></script>
+</body>
