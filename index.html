@@ -1,43 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarot Card Reader</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Tarot Card Reader</h1>
-    <div class="principal">
-        <button onclick="selectANumber()">Select a Card</button>
-        <button onclick="signEq()">Show Zodiac Sign</button>
-        <button onclick="findCardType()">Search for a Card</button>
-    </div>
-    <div id="cardDisplay" class="hide">
-        <h2>Selected Card:</h2>
-        <img id="cardImage" alt="Tarot Card">
-    </div>
-    <div id="zodiacSignDisplay" class="hide">
-        <h2>Zodiac Sign:</h2>
-        <p id="zodiacSign"></p>
-    </div>
-    <div id="cardSearchDisplay" class="hide">
-        <h2>Card Search Result:</h2>
-        <p id="cardSearchResult"></p>
-    </div>
-    <div class="circle-container">
-        <div id="signAries" class="sign">Aries</div>
-        <div id="signTauro" class="sign">Tauro</div>
-        <div id="signGéminis" class="sign">Géminis</div>
-        <div id="signCáncer" class="sign">Cáncer</div>
-        <div id="signLeo" class="sign">Leo</div>
-        <div id="signVirgo" class="sign">Virgo</div>
-        <div id="signLibra" class="sign">Libra</div>
-        <div id="signEscorpio" class="sign">Escorpio</div>
-        <div id="signSagitario" class="sign">Sagitario</div>
-        <div id="signCapricornio" class="sign">Capricornio</div>
-        <div id="signAcuario" class="sign">Acuario</div>
-        <div id="signPiscis" class="sign">Piscis</div>
+    <div>
+        <h1>Select a Tarot Card</h1>
+        <button id="getCardButton">Draw a Card</button>
+        <img id="cardImage" src="" alt="Tarot Card Image">
+        <div class="principal">
+            <h2>Upon the selected card, check if there is a sign compatibility<br>(only Mayor Arcana cards are related)</h2>
+            <div class="circle-container" id="signContainer">
+                <div class="sign" id="signAries" style="left: 80%; top: 15%;"><img src="images/aries.png" alt="Aries">
+                    <p>Aries</p>
+                </div>
+                <div class="sign" id="signTaurus" style="left: 90%; top: 25%;"><img src="images/taurus.png"
+                        alt="Taurus">
+                    <p>Taurus</p>
+                </div>
+                <div class="sign" id="signGemini" style="left: 95%; top: 45%;"><img src="images/gemini.png"
+                        alt="Gemini">
+                    <p>Gemini</p>
+                </div>
+                <div class="sign" id="signCancer" style="left: 95%; top: 65%;"><img src="images/cancer.png"
+                        alt="Cancer">
+                    <p>Cancer</p>
+                </div>
+                <div class="sign" id="signLeo" style="left: 85%; top: 80%;"><img src="images/leo.png" alt="Leo">
+                    <p>Leo</p>
+                </div>
+                <div class="sign" id="signVirgo" style="left: 70%; top: 90%;"><img src="images/virgo.png" alt="Virgo">
+                    <p>Virgo</p>
+                </div>
+                <div class="sign" id="signLibra" style="left: 25%; top: 90%;"><img src="images/libra.png" alt="Libra">
+                    <p>Libra</p>
+                </div>
+                <div class="sign" id="signScorpio" style="left: 15%; top: 75%;"><img src="images/scorpio.png"
+                        alt="Scorpio">
+                    <p>Scorpio</p>
+                </div>
+                <div class="sign" id="signSagittarius" style="left: 5%; top: 55%;"><img src="images/sagittarius.png"
+                        alt="Sagittarius">
+                    <p>Sagittarius</p>
+                </div>
+                <div class="sign" id="signCapricorn" style="left: 5%; top: 35%;"><img src="images/capricorn.png"
+                        alt="Capricorn">
+                    <p>Capricorn</p>
+                </div>
+                <div class="sign" id="signAquarius" style="left: 15%; top: 15%;"><img src="images/aquarius.png"
+                        alt="Aquarius">
+                    <p>Aquarius</p>
+                </div>
+                <div class="sign" id="signPisces" style="left: 30%; top: 5%;"><img src="images/pisces.png" alt="Pisces">
+                    <p>Pisces</p>
+                </div>
+            </div>
+            <button id="checkSignButton">Check Zodiac Sign</button>
+            <p id="zodiacSign"></p>
+            <h2>Search for a card:</h2>
+            <input type="text" id="searchCardInput" placeholder="Enter card name">
+            <button id="searchCardButton">Search Card</button>
+            <h2>Search for a zodiac sign:</h2>
+            <input type="text" id="searchSignInput" placeholder="Enter zodiac sign">
+            <button id="searchSignButton">Search Zodiac</button>
+            <p id="searchResult"></p>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

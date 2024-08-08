@@ -1,214 +1,287 @@
-let selectedCardNumber = null;
-
-const signs = [
-    { name: "Aries", description: "Iniciativa, valentía, y liderazgo. Se asocia con la carta de El Emperador." },
-    { name: "Tauro", description: "Estabilidad, sensualidad, y determinación. Se asocia con la carta de El Hierofante." },
-    { name: "Géminis", description: "Comunicación, adaptabilidad, y curiosidad. Se asocia con la carta de Los Enamorados." },
-    { name: "Cáncer", description: "Emoción, protección, y sensibilidad. Se asocia con la carta de El Carro." },
-    { name: "Leo", description: "Creatividad, confianza, y generosidad. Se asocia con la carta de La Fuerza." },
-    { name: "Virgo", description: "Análisis, precisión, y servicio. Se asocia con la carta de El Ermitaño." },
-    { name: "Libra", description: "Equilibrio, justicia, y sociabilidad. Se asocia con la carta de La Justicia." },
-    { name: "Escorpio", description: "Intensidad, transformación, y misterio. Se asocia con la carta de La Muerte." },
-    { name: "Sagitario", description: "Aventura, optimismo, y sabiduría. Se asocia con la carta de La Templanza." },
-    { name: "Capricornio", description: "Disciplina, responsabilidad, y ambición. Se asocia con la carta de El Diablo." },
-    { name: "Acuario", description: "Innovación, independencia, y originalidad. Se asocia con la carta de La Estrella." },
-    { name: "Piscis", description: "Intuición, empatía, y espiritualidad. Se asocia con la carta de La Luna." }
+const tarotCards = [
+    // Major Arcana
+    { name: "The Fool", image: "images/fool.jpg", zodiac: "None" },
+    { name: "The Magician", image: "images/magician.jpg", zodiac: "None" },
+    { name: "The High Priestess", image: "images/high_priestess.jpg", zodiac: "None" },
+    { name: "The Empress", image: "images/empress.jpg", zodiac: "None" },
+    { name: "The Emperor", image: "images/emperor.jpg", zodiac: "Aries" },
+    { name: "The Hierophant", image: "images/hierophant.jpg", zodiac: "Taurus" },
+    { name: "The Lovers", image: "images/lovers.jpg", zodiac: "Gemini" },
+    { name: "The Chariot", image: "images/chariot.jpg", zodiac: "Cancer" },
+    { name: "Strength", image: "images/strength.jpg", zodiac: "Leo" },
+    { name: "The Hermit", image: "images/hermit.jpg", zodiac: "Virgo" },
+    { name: "Wheel of Fortune", image: "images/wheel_of_fortune.jpg", zodiac: "None" },
+    { name: "Justice", image: "images/justice.jpg", zodiac: "Libra" },
+    { name: "The Hanged Man", image: "images/hanged_man.jpg", zodiac: "None" },
+    { name: "Death", image: "images/death.jpg", zodiac: "Scorpio" },
+    { name: "Temperance", image: "images/temperance.jpg", zodiac: "Sagittarius" },
+    { name: "The Devil", image: "images/devil.jpg", zodiac: "Capricorn" },
+    { name: "The Tower", image: "images/tower.jpg", zodiac: "None" },
+    { name: "The Star", image: "images/star.jpg", zodiac: "Aquarius" },
+    { name: "The Moon", image: "images/moon.jpg", zodiac: "Pisces" },
+    { name: "The Sun", image: "images/sun.jpg", zodiac: "None" },
+    { name: "Judgement", image: "images/judgement.jpg", zodiac: "None" },
+    { name: "The World", image: "images/world.jpg", zodiac: "None" },
+    // Minor Arcana - Wands
+    { name: "Ace of Wands", image: "images/Wands01.jpg", zodiac: "None" },
+    { name: "Two of Wands", image: "images/Wands02.jpg", zodiac: "None" },
+    { name: "Three of Wands", image: "images/Wands03.jpg", zodiac: "None" },
+    { name: "Four of Wands", image: "images/Wands04.jpg", zodiac: "None" },
+    { name: "Five of Wands", image: "images/Wands05.jpg", zodiac: "None" },
+    { name: "Six of Wands", image: "images/Wands06.jpg", zodiac: "None" },
+    { name: "Seven of Wands", image: "images/Wands07.jpg", zodiac: "None" },
+    { name: "Eight of Wands", image: "images/Wands08.jpg", zodiac: "None" },
+    { name: "Nine of Wands", image: "images/Wands09.jpg", zodiac: "None" },
+    { name: "Ten of Wands", image: "images/Wands10.jpg", zodiac: "None" },
+    { name: "Page of Wands", image: "images/Wands11.jpg", zodiac: "None" },
+    { name: "Knight of Wands", image: "images/Wands12.jpg", zodiac: "None" },
+    { name: "Queen of Wands", image: "images/Wands13.jpg", zodiac: "None" },
+    { name: "King of Wands", image: "images/Wands14.jpg", zodiac: "None" },
+    // Minor Arcana - Cups
+    { name: "Ace of Cups", image: "images/Cups01.jpg", zodiac: "None" },
+    { name: "Two of Cups", image: "images/Cups02.jpg", zodiac: "None" },
+    { name: "Three of Cups", image: "images/Cups03.jpg", zodiac: "None" },
+    { name: "Four of Cups", image: "images/Cups04.jpg", zodiac: "None" },
+    { name: "Five of Cups", image: "images/Cups05.jpg", zodiac: "None" },
+    { name: "Six of Cups", image: "images/Cups06.jpg", zodiac: "None" },
+    { name: "Seven of Cups", image: "images/Cups07.jpg", zodiac: "None" },
+    { name: "Eight of Cups", image: "images/Cups08.jpg", zodiac: "None" },
+    { name: "Nine of Cups", image: "images/Cups09.jpg", zodiac: "None" },
+    { name: "Ten of Cups", image: "images/Cups10.jpg", zodiac: "None" },
+    { name: "Page of Cups", image: "images/Cups11.jpg", zodiac: "None" },
+    { name: "Knight of Cups", image: "images/Cups12.jpg", zodiac: "None" },
+    { name: "Queen of Cups", image: "images/Cups13.jpg", zodiac: "None" },
+    { name: "King of Cups", image: "images/Cups14.jpg", zodiac: "None" },
+    // Minor Arcana - Swords
+    { name: "Ace of Swords", image: "images/Swords01.jpg", zodiac: "None" },
+    { name: "Two of Swords", image: "images/Swords02.jpg", zodiac: "None" },
+    { name: "Three of Swords", image: "images/Swords03.jpg", zodiac: "None" },
+    { name: "Four of Swords", image: "images/Swords04.jpg", zodiac: "None" },
+    { name: "Five of Swords", image: "images/Swords05.jpg", zodiac: "None" },
+    { name: "Six of Swords", image: "images/Swords06.jpg", zodiac: "None" },
+    { name: "Seven of Swords", image: "images/Swords07.jpg", zodiac: "None" },
+    { name: "Eight of Swords", image: "images/Swords08.jpg", zodiac: "None" },
+    { name: "Nine of Swords", image: "images/Swords09.jpg", zodiac: "None" },
+    { name: "Ten of Swords", image: "images/Swords10.jpg", zodiac: "None" },
+    { name: "Page of Swords", image: "images/Swords11.jpg", zodiac: "None" },
+    { name: "Knight of Swords", image: "images/Swords12.jpg", zodiac: "None" },
+    { name: "Queen of Swords", image: "images/Swords13.jpg", zodiac: "None" },
+    { name: "King of Swords", image: "images/Swords14.jpg", zodiac: "None" },
+    // Minor Arcana - Pentacles
+    { name: "Ace of Pentacles", image: "images/Pentacles01.jpg", zodiac: "None" },
+    { name: "Two of Pentacles", image: "images/Pentacles02.jpg", zodiac: "None" },
+    { name: "Three of Pentacles", image: "images/Pentacles03.jpg", zodiac: "None" },
+    { name: "Four of Pentacles", image: "images/Pentacles04.jpg", zodiac: "None" },
+    { name: "Five of Pentacles", image: "images/Pentacles05.jpg", zodiac: "None" },
+    { name: "Six of Pentacles", image: "images/Pentacles06.jpg", zodiac: "None" },
+    { name: "Seven of Pentacles", image: "images/Pentacles07.jpg", zodiac: "None" },
+    { name: "Eight of Pentacles", image: "images/Pentacles08.jpg", zodiac: "None" },
+    { name: "Nine of Pentacles", image: "images/Pentacles09.jpg", zodiac: "None" },
+    { name: "Ten of Pentacles", image: "images/Pentacles10.jpg", zodiac: "None" },
+    { name: "Page of Pentacles", image: "images/Pentacles11.jpg", zodiac: "None" },
+    { name: "Knight of Pentacles", image: "images/Pentacles12.jpg", zodiac: "None" },
+    { name: "Queen of Pentacles", image: "images/Pentacles13.jpg", zodiac: "None" },
+    { name: "King of Pentacles", image: "images/Pentacles14.jpg", zodiac: "None" }
 ];
 
-const majorArcanaCards = [
-    "El Loco", "El Mago", "La Sacerdotisa", "La Emperatriz", "El Emperador",
-    "El Hierofante", "Los Enamorados", "El Carro", "La Fuerza", "El Ermitaño",
-    "La Rueda de la Fortuna", "La Justicia", "El Colgado", "La Muerte", "La Templanza",
-    "El Diablo", "La Torre", "La Estrella", "La Luna", "El Sol",
-    "El Juicio", "El Mundo"
-];
+const signEquivalencies = {
+    "0": "The Fool, the beginning of a journey, the leap of faith",
+    "1": "The Magician, the mastery of skills, the creative power",
+    "2": "The High Priestess, the intuition and inner wisdom, the mysteries",
+    "3": "The Empress, the nurturing and abundance, the creation",
+    "4": "The Emperor, the authority and structure, the leadership",
+    "5": "The Hierophant, the tradition and spiritual guidance, the teacher",
+    "6": "The Lovers, the choice and harmony, the union",
+    "7": "The Chariot, the determination and willpower, the victory",
+    "8": "Strength, the courage and patience, the inner strength",
+    "9": "The Hermit, the introspection and solitude, the search for truth",
+    "10": "Wheel of Fortune, the cycles of life, the destiny and luck",
+    "11": "Justice, the balance of truth, the scales of karma",
+    "12": "The Hanged Man, the sacrifice for insight, the pause in action",
+    "13": "Death, the end of a cycle, the transformation through letting go",
+    "14": "Temperance, the blending of opposites, the path of moderation",
+    "15": "The Devil, the bondage of materialism, the challenge of freedom",
+    "16": "The Tower, the sudden upheaval, the destruction of falsehoods",
+    "17": "The Star, the hope and inspiration, the guidance from above",
+    "18": "The Moon, the realm of dreams, the illusion and intuition",
+    "19": "The Sun, the clarity and vitality, the joy of life",
+    "20": "Judgement, the awakening and renewal, the call to higher purpose",
+    "21": "The World, the completion of a journey, the integration of experience",
 
-const minorArcana = {
-        "Copas": [
-            { card: "As de Copas", description: "Emociones nuevas y abundantes. Significa un nuevo comienzo emocional." },
-            { card: "Dos de Copas", description: "Unión y asociación. Representa relaciones y armonía." },
-            { card: "Tres de Copas", description: "Celebración y comunidad. Se refiere a la alegría compartida." },
-            { card: "Cuatro de Copas", description: "Descontento y reflexión. Indica una necesidad de reevaluar tus emociones." },
-            { card: "Cinco de Copas", description: "Pérdida y dolor. Representa arrepentimiento y tristeza." },
-            { card: "Seis de Copas", description: "Nostalgia y recuerdos. Conecta con el pasado y la inocencia infantil." },
-            { card: "Siete de Copas", description: "Opciones y confusión. Sugiere muchas posibilidades y la necesidad de elegir." },
-            { card: "Ocho de Copas", description: "Desaparecer y dejar atrás. Indica un cambio o la búsqueda de algo más significativo." },
-            { card: "Nueve de Copas", description: "Satisfacción y realización. Representa la obtención de deseos y felicidad." },
-            { card: "Diez de Copas", description: "Felicidad y armonía familiar. Simboliza la plenitud emocional y relaciones felices." },
-            { card: "Sota de Copas", description: "Mensajes emocionales. Indica la llegada de noticias o propuestas relacionadas con el corazón." },
-            { card: "Caballo de Copas", description: "Romanticismo y idealismo. Representa la búsqueda de romance y sueños." },
-            { card: "Reina de Copas", description: "Empatía y compasión. Se refiere a la habilidad para cuidar y comprender a los demás." },
-            { card: "Rey de Copas", description: "Madurez emocional y equilibrio. Representa la sabiduría y la estabilidad en las emociones." }
-        ],
-        "Oros": [
-            { card: "As de Oros", description: "Nuevas oportunidades financieras y materiales. Indica un nuevo comienzo en la prosperidad." },
-            { card: "Dos de Oros", description: "Equilibrio y adaptabilidad. Sugiere la gestión de múltiples prioridades o recursos." },
-            { card: "Tres de Oros", description: "Trabajo en equipo y colaboración. Representa el éxito a través de la cooperación." },
-            { card: "Cuatro de Oros", description: "Seguridad y estabilidad. Indica la necesidad de mantener el control sobre los recursos." },
-            { card: "Cinco de Oros", description: "Dificultades financieras y pérdidas. Señala la falta de seguridad y la necesidad de apoyo." },
-            { card: "Seis de Oros", description: "Generosidad y equilibrio. Representa la distribución equitativa de los recursos y la caridad." },
-            { card: "Siete de Oros", description: "Paciencia y evaluación. Indica el tiempo de espera y la evaluación del progreso." },
-            { card: "Ocho de Oros", description: "Dedicación y habilidad. Sugiere el trabajo duro y el perfeccionamiento de habilidades." },
-            { card: "Nueve de Oros", description: "Logro y éxito material. Representa el disfrute de los frutos del esfuerzo." },
-            { card: "Diez de Oros", description: "Riqueza y legado. Simboliza la estabilidad financiera y la seguridad a largo plazo." },
-            { card: "Sota de Oros", description: "Aprendizaje y nuevas oportunidades. Indica la llegada de nuevas ideas o proyectos." },
-            { card: "Caballo de Oros", description: "Responsabilidad y trabajo diligente. Representa el enfoque en los objetivos y la perseverancia." },
-            { card: "Reina de Oros", description: "Abundancia y practicidad. Se refiere a la capacidad de cuidar y proporcionar estabilidad material." },
-            { card: "Rey de Oros", description: "Éxito y autoridad financiera. Simboliza la capacidad de gestionar y controlar los recursos con habilidad." }
-        ],
-        "Espadas": [
-            { card: "As de Espadas", description: "Claridad mental y verdad. Indica nuevos comienzos en la comprensión y la comunicación." },
-            { card: "Dos de Espadas", description: "Conflicto y decisiones. Sugiere la necesidad de tomar decisiones difíciles y enfrentar conflictos." },
-            { card: "Tres de Espadas", description: "Dolor y tristeza. Representa el sufrimiento emocional y la separación." },
-            { card: "Cuatro de Espadas", description: "Descanso y recuperación. Indica la necesidad de tiempo para sanar y reflexionar." },
-            { card: "Cinco de Espadas", description: "Conflicto y derrota. Señala el enfrentamiento y las consecuencias de las disputas." },
-            { card: "Seis de Espadas", description: "Transición y cambio. Representa el movimiento hacia una situación más tranquila." },
-            { card: "Siete de Espadas", description: "Estrategia y engaño. Sugiere la necesidad de ser astuto y cauteloso en los planes." },
-            { card: "Ocho de Espadas", description: "Restricción y miedo. Indica sentimientos de atrapamiento y limitación." },
-            { card: "Nueve de Espadas", description: "Ansiedad y preocupación. Representa la angustia mental y la preocupación." },
-            { card: "Diez de Espadas", description: "Ruptura y dolor. Simboliza el final doloroso de una situación difícil." },
-            { card: "Sota de Espadas", description: "Curiosidad y vigilancia. Sugiere la llegada de noticias y la necesidad de estar alerta." },
-            { card: "Caballo de Espadas", description: "Acción y rapidez. Representa la energía y la rapidez en la resolución de problemas." },
-            { card: "Reina de Espadas", description: "Claridad y justicia. Se refiere a la habilidad para tomar decisiones objetivas y justas." },
-            { card: "Rey de Espadas", description: "Autoridad y poder mental. Simboliza la capacidad de liderar con sabiduría y autoridad." }
-        ],
-        "Bastos": [
-            { card: "As de Bastos", description: "Inspiración y nuevos comienzos. Indica el inicio de un nuevo proyecto o idea." },
-            { card: "Dos de Bastos", description: "Planificación y visión. Sugiere la necesidad de planificación y establecer metas." },
-            { card: "Tres de Bastos", description: "Expansión y progreso. Representa el avance y la expansión en proyectos." },
-            { card: "Cuatro de Bastos", description: "Celebración y estabilidad. Simboliza el éxito y la celebración de los logros." },
-            { card: "Cinco de Bastos", description: "Competencia y conflicto. Indica la presencia de desafíos y rivalidades." },
-            { card: "Seis de Bastos", description: "Victoria y reconocimiento. Representa el éxito y el reconocimiento por los logros." },
-            { card: "Siete de Bastos", description: "Defensa y perseverancia. Sugiere la necesidad de defender tus posiciones y perseverar." },
-            { card: "Ocho de Bastos", description: "Velocidad y acción. Indica el movimiento rápido y la acción decisiva." },
-            { card: "Nueve de Bastos", description: "Resiliencia y fortaleza. Representa la resistencia y la capacidad para superar obstáculos." },
-            { card: "Diez de Bastos", description: "Carga y responsabilidad. Sugiere la necesidad de gestionar cargas y responsabilidades." },
-            { card: "Sota de Bastos", description: "Energía y aventura. Indica el inicio de nuevas aventuras y la búsqueda de inspiración." },
-            { card: "Caballo de Bastos", description: "Acción y ambición. Representa la energía y el impulso para alcanzar metas." },
-            { card: "Reina de Bastos", description: "Creatividad y confianza. Se refiere a la habilidad para inspirar y liderar con pasión." },
-            { card: "Rey de Bastos", description: "Liderazgo y visión. Simboliza la habilidad para liderar con visión y determinación." }
-        ]
-    };
+    // Minor Arcana - Wands
+    "22": "Ace of Wands, the spark of inspiration, the new beginnings",
+    "23": "Two of Wands, the planning and decision-making, the future possibilities",
+    "24": "Three of Wands, the expansion and foresight, the long-term vision",
+    "25": "Four of Wands, the celebration and harmony, the foundation of success",
+    "26": "Five of Wands, the conflict and competition, the struggle for dominance",
+    "27": "Six of Wands, the victory and recognition, the public acclaim",
+    "28": "Seven of Wands, the defense and perseverance, the standing firm",
+    "29": "Eight of Wands, the rapid movement, the swift action",
+    "30": "Nine of Wands, the resilience and courage, the final challenge",
+    "31": "Ten of Wands, the burden and responsibility, the hard work",
+    "32": "Page of Wands, the enthusiasm and exploration, the adventurous spirit",
+    "33": "Knight of Wands, the passion and energy, the pursuit of goals",
+    "34": "Queen of Wands, the confidence and determination, the charismatic leader",
+    "35": "King of Wands, the vision and leadership, the entrepreneurial spirit",
 
-const cardImages = {
-    "El Loco": "images/fool.jpg",
-    "El Mago": "images/magician.jpg",
-    "La Sacerdotisa": "images/high_priestess.jpg",
-    "La Emperatriz": "images/empress.jpg",
-    "El Emperador": "images/emperor.jpg",
-    "El Hierofante": "images/hierophant.jpg",
-    "Los Enamorados": "images/lovers.jpg",
-    "El Carro": "images/chariot.jpg",
-    "La Fuerza": "images/strength.jpg",
-    "El Ermitaño": "images/hermit.jpg",
-    "La Rueda de la Fortuna": "images/wheel_of_fortune.jpg",
-    "La Justicia": "images/justice.jpg",
-    "El Colgado": "images/hanged_man.jpg",
-    "La Muerte": "images/death.jpg",
-    "La Templanza": "images/temperance.jpg",
-    "El Diablo": "images/devil.jpg",
-    "La Torre": "images/tower.jpg",
-    "La Estrella": "images/star.jpg",
-    "La Luna": "images/moon.jpg",
-    "El Sol": "images/sun.jpg",
-    "El Juicio": "images/judgement.jpg",
-    "El Mundo": "images/world.jpg"
+    // Minor Arcana - Cups
+    "36": "Ace of Cups, the emotional beginning, the new love or friendship",
+    "37": "Two of Cups, the partnership and unity, the connection",
+    "38": "Three of Cups, the celebration and friendship, the community",
+    "39": "Four of Cups, the contemplation and reevaluation, the emotional stagnation",
+    "40": "Five of Cups, the loss and regret, the emotional disappointment",
+    "41": "Six of Cups, the nostalgia and childhood memories, the innocence",
+    "42": "Seven of Cups, the choices and fantasies, the illusion",
+    "43": "Eight of Cups, the abandonment and withdrawal, the search for deeper meaning",
+    "44": "Nine of Cups, the wish fulfillment, the contentment",
+    "45": "Ten of Cups, the emotional fulfillment, the family harmony",
+    "46": "Page of Cups, the creativity and emotional growth, the youthful spirit",
+    "47": "Knight of Cups, the romance and charm, the pursuit of dreams",
+    "48": "Queen of Cups, the compassion and nurturing, the emotional depth",
+    "49": "King of Cups, the emotional balance and control, the wise leader",
+
+    // Minor Arcana - Swords
+    "50": "Ace of Swords, the clarity and breakthrough, the new idea",
+    "51": "Two of Swords, the indecision and stalemate, the difficult choices",
+    "52": "Three of Swords, the heartbreak and sorrow, the emotional pain",
+    "53": "Four of Swords, the rest and recovery, the meditation",
+    "54": "Five of Swords, the conflict and defeat, the hollow victory",
+    "55": "Six of Swords, the transition and moving on, the recovery",
+    "56": "Seven of Swords, the deception and strategy, the cunning",
+    "57": "Eight of Swords, the restriction and isolation, the feeling of being trapped",
+    "58": "Nine of Swords, the anxiety and worry, the nightmares",
+    "59": "Ten of Swords, the betrayal and ending, the rock bottom",
+    "60": "Page of Swords, the curiosity and mental agility, the quick thinker",
+    "61": "Knight of Swords, the ambition and drive, the focused action",
+    "62": "Queen of Swords, the intellect and independence, the sharp mind",
+    "63": "King of Swords, the authority and truth, the fair judgment",
+
+    // Minor Arcana - Pentacles
+    "64": "Ace of Pentacles, the material beginning, the new financial opportunity",
+    "65": "Two of Pentacles, the balance and adaptability, the juggling of resources",
+    "66": "Three of Pentacles, the teamwork and collaboration, the skill development",
+    "67": "Four of Pentacles, the control and stability, the material security",
+    "68": "Five of Pentacles, the financial loss and poverty, the hardship",
+    "69": "Six of Pentacles, the generosity and sharing, the charity",
+    "70": "Seven of Pentacles, the assessment and patience, the long-term investment",
+    "71": "Eight of Pentacles, the diligence and craftsmanship, the hard work",
+    "72": "Nine of Pentacles, the luxury and self-sufficiency, the financial independence",
+    "73": "Ten of Pentacles, the legacy and inheritance, the family wealth",
+    "74": "Page of Pentacles, the ambition and new opportunities, the student",
+    "75": "Knight of Pentacles, the hard work and responsibility, the reliable worker",
+    "76": "Queen of Pentacles, the practicality and nurturing, the provider",
+    "77": "King of Pentacles, the wealth and security, the successful leader"
 };
 
-const selectANumber = () => {
-    selectedCardNumber = Math.floor(Math.random() * majorArcanaCards.length);
-    const selectedCard = majorArcanaCards[selectedCardNumber];
-    document.getElementById('cardImage').src = cardImages[selectedCard];
-    document.getElementById('cardImage').classList.add('show');
-    document.getElementById('cardDisplay').classList.add('show');
-    document.getElementById('cardDisplay').classList.remove('hide');
-    localStorage.setItem('selectedCardNumber', selectedCardNumber);
-    document.getElementById('cardDisplay').innerHTML = `The card you have selected is: ${selectedCard}`;
+const relateSign = {
+    "aries": "Aries: The Ram, representing leadership, courage, and determination.",
+    "taurus": "Taurus: The Bull, symbolizing reliability, patience, and a love for beauty.",
+    "gemini": "Gemini: The Twins, embodying versatility, curiosity, and adaptability.",
+    "cancer": "Cancer: The Crab, representing emotional depth, intuition, and nurturing.",
+    "leo": "Leo: The Lion, symbolizing confidence, creativity, and passion.",
+    "virgo": "Virgo: The Maiden, embodying practicality, attention to detail, and a love for order.",
+    "libra": "Libra: The Scales, representing balance, fairness, and a love for harmony.",
+    "scorpio": "Scorpio: The Scorpion, symbolizing intensity, transformation, and passion.",
+    "sagittarius": "Sagittarius: The Archer, embodying adventure, optimism, and a quest for knowledge.",
+    "capricorn": "Capricorn: The Goat, representing discipline, ambition, and perseverance.",
+    "aquarius": "Aquarius: The Water Bearer, symbolizing innovation, independence, and humanitarianism.",
+    "pisces": "Pisces: The Fish, embodying compassion, creativity, and a deep connection to emotions."
 };
 
-const getZodiacSignForCard = (card) => {
-    switch(card) {
-        case "El Emperador":
-            return "Aries";
-        case "El Hierofante":
-            return "Tauro";
-        case "Los Enamorados":
-            return "Géminis";
-        case "El Carro":
-            return "Cáncer";
-        case "La Fuerza":
-            return "Leo";
-        case "El Ermitaño":
-            return "Virgo";
-        case "La Justicia":
-            return "Libra";
-        case "La Muerte":
-            return "Escorpio";
-        case "La Templanza":
-            return "Sagitario";
-        case "El Diablo":
-            return "Capricornio";
-        case "La Estrella":
-            return "Acuario";
-        case "La Luna":
-            return "Piscis";
-        default:
-            return "Unknown";
-    }
-};
 
-const signEq = () => {
-    if (selectedCardNumber === null) {
-        document.getElementById('zodiacSignDisplay').classList.add('show');
-        document.getElementById('zodiacSignDisplay').classList.remove('hide');
-        document.getElementById('zodiacSign').innerHTML = "Please select a card first.";
-        return;
-    }
-    const selectedCard = majorArcanaCards[selectedCardNumber];
-    const zodiacSign = getZodiacSignForCard(selectedCard);
-    document.getElementById('zodiacSignDisplay').classList.add('show');
-    document.getElementById('zodiacSignDisplay').classList.remove('hide');
-    document.getElementById('zodiacSign').innerHTML = `The zodiac sign for the selected card (${selectedCard}) is: ${zodiacSign}`;
-    highlightSign(zodiacSign);
-};
+function saveCardToLocalStorage(card) {
+    localStorage.setItem('selectedCard', JSON.stringify(card));
+}
 
-const highlightSign = (signName) => {
-    document.querySelectorAll('.sign').forEach(signElement => {
-        signElement.classList.remove('center');
-    });
-    document.getElementById(`sign${signName}`).classList.add('center');
-};
+function loadCardFromLocalStorage() {
+    return JSON.parse(localStorage.getItem('selectedCard'));
+}
 
-// Retrieve the stored card number and show the image when the page loads
-document.addEventListener("DOMContentLoaded", () => {
-    const storedCardNumber = localStorage.getItem('selectedCardNumber');
-    if (storedCardNumber !== null) {
-        selectedCardNumber = parseInt(storedCardNumber);
-        const storedCard = majorArcanaCards[selectedCardNumber];
-        document.getElementById('cardImage').src = cardImages[storedCard];
-        document.getElementById('cardImage').classList.add('show');
-        document.getElementById('cardDisplay').classList.add('show');
-        document.getElementById('cardDisplay').classList.remove('hide');
-        document.getElementById('cardDisplay').innerHTML = `The card you have selected is: ${storedCard}`;
+function displayCard(card) {
+    const cardImage = document.getElementById('cardImage');
+    cardImage.src = card.image;
+    cardImage.alt = card.name;
+    cardImage.classList.add('show');
+}
+
+function getRandomCard() {
+    const randomIndex = Math.floor(Math.random() * tarotCards.length);
+    return tarotCards[randomIndex];
+}
+
+function displayZodiac(card) {
+    const zodiacMessage = `The zodiac sign associated with ${card.name} is ${card.zodiac}.`;
+    document.getElementById('zodiacSign').innerText = zodiacMessage;
+}
+
+document.getElementById('checkSignButton').addEventListener('click', () => {
+    const card = loadCardFromLocalStorage();
+    if (card) {
+        displayZodiac(card);
+
+        const signs = document.querySelectorAll('.sign');
+        signs.forEach(sign => {
+            sign.style.transform = "";
+            sign.style.zIndex = "";
+        });
+
+        const zodiacSign = card.zodiac.toLowerCase();
+        const signElement = document.getElementById(`sign${zodiacSign.charAt(0).toUpperCase() + zodiacSign.slice(1)}`);
+
+        if (signElement) {
+            signElement.style.transform = "translate(-50%, -50%)";
+            signElement.style.left = "50%";
+            signElement.style.top = "50%";
+            signElement.style.zIndex = "10";
+        }
+    } else {
+        alert('Please draw a card first.');
     }
 });
 
-// Function to search for a card
-const searchCard = (cardName) => {
-    if (majorArcanaCards.includes(cardName)) {
-        return "Major Arcana";
-    } else if (minorArcanaCards.includes(cardName)) {
-        return "Minor Arcana";
-    } else {
-        return "Card not found";
-    }
-};
+document.getElementById('getCardButton').addEventListener('click', () => {
+    const card = getRandomCard();
+    saveCardToLocalStorage(card);
+    displayCard(card);
+});
 
-// Example of how to use the searchCard function
-const findCardType = () => {
-    const cardName = prompt("Enter the name of the card to search:");
-    const result = searchCard(cardName);
-    document.getElementById('cardSearchDisplay').classList.add('show');
-    document.getElementById('cardSearchDisplay').classList.remove('hide');
-    document.getElementById('cardSearchResult').innerHTML = `The card "${cardName}" is a: ${result}`;
-};
+document.getElementById('checkSignButton').addEventListener('click', () => {
+    const card = loadCardFromLocalStorage();
+    if (card) {
+        displayZodiac(card);
+    } else {
+        alert('Please draw a card first.');
+    }
+});
+
+document.getElementById('searchCardButton').addEventListener('click', () => {
+    const searchTerm = document.getElementById('searchCardInput').value;
+    let found = false;
+
+    tarotCards.forEach((card, index) => {
+        if (card.name.toLowerCase() === searchTerm.toLowerCase()) {
+            document.getElementById('searchResult').innerText = `${card.name} is card number ${index}. ${signEquivalencies[index]}`;
+            found = true;
+        }
+    });
+
+    if (!found) {
+        document.getElementById('searchResult').innerText = `${searchTerm} is not in the deck.`;
+    }
+});
+
+document.getElementById('searchSignButton').addEventListener('click', () => {
+    const searchSign = document.getElementById('searchSignInput').value.toLowerCase();
+    let found = false;
+
+    tarotCards.forEach((card) => {
+        if (card.zodiac.toLowerCase() === searchSign) {
+            document.getElementById('searchResult').innerText = `${searchSign.charAt(0).toUpperCase() + searchSign.slice(1)} is associated with ${card.name}. ${relateSign[searchSign]}`;
+            found = true;
+        }
+    });
+
+    if (!found) {
+        document.getElementById('searchResult').innerText = `${searchSign.charAt(0).toUpperCase() + searchSign.slice(1)} is not associated with any card.`;
+    }
+});
