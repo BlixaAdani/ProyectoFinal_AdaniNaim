@@ -1,0 +1,471 @@
+[
+    {
+        "name": "The Fool",
+        "image": "images/fool.jpg",
+        "zodiac": "Aries",
+        "description": "A card representing new beginnings."
+    },
+    {
+        "name": "The Magician",
+        "image": "images/magician.jpg",
+        "zodiac": "Mercury",
+        "description": "A card symbolizing manifestation and skill."
+    },
+    {
+        "name": "The High Priestess",
+        "image": "images/high_priestess.jpg",
+        "zodiac": "The Moon",
+        "description": "A card representing intuition and mystery."
+    },
+    {
+        "name": "The Empress",
+        "image": "images/empress.jpg",
+        "zodiac": "Venus",
+        "description": "A card symbolizing fertility and abundance."
+    },
+    {
+        "name": "The Emperor",
+        "image": "images/emperor.jpg",
+        "zodiac": "Aries",
+        "description": "A card representing authority and structure."
+    },
+    {
+        "name": "The Hierophant",
+        "image": "images/hierophant.jpg",
+        "zodiac": "Taurus",
+        "description": "A card symbolizing tradition and spiritual guidance."
+    },
+    {
+        "name": "The Lovers",
+        "image": "images/lovers.jpg",
+        "zodiac": "Gemini",
+        "description": "A card representing love and relationships."
+    },
+    {
+        "name": "The Chariot",
+        "image": "images/chariot.jpg",
+        "zodiac": "Cancer",
+        "description": "A card symbolizing determination and control."
+    },
+    {
+        "name": "Strength",
+        "image": "images/strength.jpg",
+        "zodiac": "Leo",
+        "description": "A card representing courage and inner strength."
+    },
+    {
+        "name": "The Hermit",
+        "image": "images/hermit.jpg",
+        "zodiac": "Virgo",
+        "description": "A card symbolizing introspection and solitude."
+    },
+    {
+        "name": "Wheel of Fortune",
+        "image": "images/wheel_of_fortune.jpg",
+        "zodiac": "Jupiter",
+        "description": "A card representing cycles and destiny."
+    },
+    {
+        "name": "Justice",
+        "image": "images/justice.jpg",
+        "zodiac": "Libra",
+        "description": "A card symbolizing fairness and balance."
+    },
+    {
+        "name": "The Hanged Man",
+        "image": "images/hanged_man.jpg",
+        "zodiac": "Neptune",
+        "description": "A card representing sacrifice and new perspectives."
+    },
+    {
+        "name": "Death",
+        "image": "images/death.jpg",
+        "zodiac": "Scorpio",
+        "description": "A card symbolizing transformation and endings."
+    },
+    {
+        "name": "Temperance",
+        "image": "images/temperance.jpg",
+        "zodiac": "Sagittarius",
+        "description": "A card representing moderation and balance."
+    },
+    {
+        "name": "The Devil",
+        "image": "images/devil.jpg",
+        "zodiac": "Capricorn",
+        "description": "A card symbolizing temptation and materialism."
+    },
+    {
+        "name": "The Tower",
+        "image": "images/tower.jpg",
+        "zodiac": "Mars",
+        "description": "A card representing sudden change and upheaval."
+    },
+    {
+        "name": "The Star",
+        "image": "images/star.jpg",
+        "zodiac": "Aquarius",
+        "description": "A card symbolizing hope and inspiration."
+    },
+    {
+        "name": "The Moon",
+        "image": "images/moon.jpg",
+        "zodiac": "Pisces",
+        "description": "A card representing illusion and intuition."
+    },
+    {
+        "name": "The Sun",
+        "image": "images/sun.jpg",
+        "zodiac": "Sun",
+        "description": "A card symbolizing positivity and success."
+    },
+    {
+        "name": "Judgement",
+        "image": "images/judgement.jpg",
+        "zodiac": "Pluto",
+        "description": "A card representing reflection and reckoning."
+    },
+    {
+        "name": "The World",
+        "image": "images/world.jpg",
+        "zodiac": "Saturn",
+        "description": "A card symbolizing completion and achievement."
+    },
+    {
+        "name": "Ace of Cups",
+        "image": "images/Cups01.jpg",
+        "zodiac": "Cancer",
+        "description": "A card representing emotional fulfillment."
+    },
+    {
+        "name": "Two of Cups",
+        "image": "images/Cups02.jpg",
+        "zodiac": "Venus",
+        "description": "A card symbolizing partnership and love."
+    },
+    {
+        "name": "Three of Cups",
+        "image": "images/Cups03.jpg",
+        "zodiac": "Jupiter",
+        "description": "A card indicating celebration and friendship."
+    },
+    {
+        "name": "Four of Cups",
+        "image": "images/Cups04.jpg",
+        "zodiac": "Moon",
+        "description": "A card representing contemplation and reevaluation."
+    },
+    {
+        "name": "Five of Cups",
+        "image": "images/Cups05.jpg",
+        "zodiac": "Scorpio",
+        "description": "A card symbolizing loss and regret."
+    },
+    {
+        "name": "Six of Cups",
+        "image": "images/Cups06.jpg",
+        "zodiac": "Sun in Scorpio",
+        "description": "A card indicating nostalgia and past influences."
+    },
+    {
+        "name": "Seven of Cups",
+        "image": "images/Cups07.jpg",
+        "zodiac": "Venus in Scorpio",
+        "description": "A card representing choices and illusions."
+    },
+    {
+        "name": "Eight of Cups",
+        "image": "images/Cups08.jpg",
+        "zodiac": "Saturn in Pisces",
+        "description": "A card symbolizing leaving something behind to seek more."
+    },
+    {
+        "name": "Nine of Cups",
+        "image": "images/Cups09.jpg",
+        "zodiac": "Jupiter in Pisces",
+        "description": "A card representing satisfaction and emotional contentment."
+    },
+    {
+        "name": "Ten of Cups",
+        "image": "images/Cups10.jpg",
+        "zodiac": "Mars in Pisces",
+        "description": "A card symbolizing happiness and family harmony."
+    },
+    {
+        "name": "Page of Cups",
+        "image": "images/Cups11.jpg",
+        "zodiac": "Pisces",
+        "description": "A card representing creativity and emotional openness."
+    },
+    {
+        "name": "Knight of Cups",
+        "image": "images/Cups12.jpg",
+        "zodiac": "Scorpio",
+        "description": "A card symbolizing romance and charm."
+    },
+    {
+        "name": "Queen of Cups",
+        "image": "images/Cups13.jpg",
+        "zodiac": "Cancer",
+        "description": "A card representing empathy and intuition."
+    },
+    {
+        "name": "King of Cups",
+        "image": "images/Cups14.jpg",
+        "zodiac": "Scorpio",
+        "description": "A card symbolizing emotional maturity and stability."
+    },
+    {
+        "name": "Ace of Pentacles",
+        "image": "images/Pentacles01.jpg",
+        "zodiac": "Capricorn",
+        "description": "A card representing new financial opportunities."
+    },
+    {
+        "name": "Two of Pentacles",
+        "image": "images/Pentacles02.jpg",
+        "zodiac": "Jupiter in Capricorn",
+        "description": "A card symbolizing balance and adaptability."
+    },
+    {
+        "name": "Three of Pentacles",
+        "image": "images/Pentacles03.jpg",
+        "zodiac": "Mars in Capricorn",
+        "description": "A card indicating teamwork and collaboration."
+    },
+    {
+        "name": "Four of Pentacles",
+        "image": "images/Pentacles04.jpg",
+        "zodiac": "Sun in Capricorn",
+        "description": "A card representing security and control."
+    },
+    {
+        "name": "Five of Pentacles",
+        "image": "images/Pentacles05.jpg",
+        "zodiac": "Mercury in Taurus",
+        "description": "A card symbolizing hardship and financial loss."
+    },
+    {
+        "name": "Six of Pentacles",
+        "image": "images/Pentacles06.jpg",
+        "zodiac": "Moon in Taurus",
+        "description": "A card indicating generosity and giving."
+    },
+    {
+        "name": "Seven of Pentacles",
+        "image": "images/Pentacles07.jpg",
+        "zodiac": "Saturn in Taurus",
+        "description": "A card representing patience and long-term success."
+    },
+    {
+        "name": "Eight of Pentacles",
+        "image": "images/Pentacles08.jpg",
+        "zodiac": "Sun in Virgo",
+        "description": "A card symbolizing diligence and skill development."
+    },
+    {
+        "name": "Nine of Pentacles",
+        "image": "images/Pentacles09.jpg",
+        "zodiac": "Venus in Virgo",
+        "description": "A card representing abundance and self-sufficiency."
+    },
+    {
+        "name": "Ten of Pentacles",
+        "image": "images/Pentacles10.jpg",
+        "zodiac": "Mercury in Virgo",
+        "description": "A card symbolizing legacy and financial stability."
+    },
+    {
+        "name": "Page of Pentacles",
+        "image": "images/Pentacles11.jpg",
+        "zodiac": "Capricorn",
+        "description": "A card representing ambition and practical goals."
+    },
+    {
+        "name": "Knight of Pentacles",
+        "image": "images/Pentacles12.jpg",
+        "zodiac": "Taurus",
+        "description": "A card symbolizing reliability and hard work."
+    },
+    {
+        "name": "Queen of Pentacles",
+        "image": "images/Pentacles13.jpg",
+        "zodiac": "Virgo",
+        "description": "A card representing nurturing and resourcefulness."
+    },
+    {
+        "name": "King of Pentacles",
+        "image": "images/Pentacles14.jpg",
+        "zodiac": "Capricorn",
+        "description": "A card symbolizing wealth and authority."
+    },
+    {
+        "name": "Ace of Swords",
+        "image": "images/Swords01.jpg",
+        "zodiac": "Air",
+        "description": "A card representing clarity and truth."
+    },
+    {
+        "name": "Two of Swords",
+        "image": "images/Swords02.jpg",
+        "zodiac": "Moon in Libra",
+        "description": "A card symbolizing difficult decisions and stalemate."
+    },
+    {
+        "name": "Three of Swords",
+        "image": "images/Swords03.jpg",
+        "zodiac": "Saturn in Libra",
+        "description": "A card indicating heartache and sorrow."
+    },
+    {
+        "name": "Four of Swords",
+        "image": "images/Swords04.jpg",
+        "zodiac": "Jupiter in Libra",
+        "description": "A card representing rest and recovery."
+    },
+    {
+        "name": "Five of Swords",
+        "image": "images/Swords05.jpg",
+        "zodiac": "Venus in Aquarius",
+        "description": "A card symbolizing conflict and defeat."
+    },
+    {
+        "name": "Six of Swords",
+        "image": "images/Swords06.jpg",
+        "zodiac": "Mercury in Aquarius",
+        "description": "A card indicating transition and movement."
+    },
+    {
+        "name": "Seven of Swords",
+        "image": "images/Swords07.jpg",
+        "zodiac": "Moon in Aquarius",
+        "description": "A card representing deception and strategy."
+    },
+    {
+        "name": "Eight of Swords",
+        "image": "images/Swords08.jpg",
+        "zodiac": "Jupiter in Gemini",
+        "description": "A card symbolizing restriction and confusion."
+    },
+    {
+        "name": "Nine of Swords",
+        "image": "images/Swords09.jpg",
+        "zodiac": "Mars in Gemini",
+        "description": "A card representing anxiety and nightmares."
+    },
+    {
+        "name": "Ten of Swords",
+        "image": "images/Swords10.jpg",
+        "zodiac": "Sun in Gemini",
+        "description": "A card symbolizing betrayal and collapse."
+    },
+    {
+        "name": "Page of Swords",
+        "image": "images/Swords11.jpg",
+        "zodiac": "Air",
+        "description": "A card representing curiosity and vigilance."
+    },
+    {
+        "name": "Knight of Swords",
+        "image": "images/Swords12.jpg",
+        "zodiac": "Mars in Libra",
+        "description": "A card symbolizing action and decisiveness."
+    },
+    {
+        "name": "Queen of Swords",
+        "image": "images/Swords13.jpg",
+        "zodiac": "Libra",
+        "description": "A card representing intellect and fairness."
+    },
+    {
+        "name": "King of Swords",
+        "image": "images/Swords14.jpg",
+        "zodiac": "Aquarius",
+        "description": "A card symbolizing authority and clarity."
+    },
+
+    {
+        "name": "Ace of Wands",
+        "image": "images/Wands01.jpg",
+        "zodiac": "Aries",
+        "description": "A card representing inspiration and new beginnings."
+    },
+    {
+        "name": "Two of Wands",
+        "image": "images/Wands02.jpg",
+        "zodiac": "Mars in Aries",
+        "description": "A card symbolizing planning and decision-making."
+    },
+    {
+        "name": "Three of Wands",
+        "image": "images/Wands03.jpg",
+        "zodiac": "Sun in Aries",
+        "description": "A card indicating progress and expansion."
+    },
+    {
+        "name": "Four of Wands",
+        "image": "images/Wands04.jpg",
+        "zodiac": "Venus in Aries",
+        "description": "A card representing celebration and harmony."
+    },
+    {
+        "name": "Five of Wands",
+        "image": "images/Wands05.jpg",
+        "zodiac": "Saturn in Leo",
+        "description": "A card symbolizing conflict and competition."
+    },
+    {
+        "name": "Six of Wands",
+        "image": "images/Wands06.jpg",
+        "zodiac": "Jupiter in Leo",
+        "description": "A card indicating victory and recognition."
+    },
+    {
+        "name": "Seven of Wands",
+        "image": "images/Wands07.jpg",
+        "zodiac": "Mars in Leo",
+        "description": "A card representing challenge and perseverance."
+    },
+    {
+        "name": "Eight of Wands",
+        "image": "images/Wands08.jpg",
+        "zodiac": "Mercury in Sagittarius",
+        "description": "A card symbolizing swift movement and progress."
+    },
+    {
+        "name": "Nine of Wands",
+        "image": "images/Wands09.jpg",
+        "zodiac": "Moon in Sagittarius",
+        "description": "A card representing resilience and endurance."
+    },
+    {
+        "name": "Ten of Wands",
+        "image": "images/Wands10.jpg",
+        "zodiac": "Saturn in Sagittarius",
+        "description": "A card symbolizing burden and responsibility."
+    },
+    {
+        "name": "Page of Wands",
+        "image": "images/Wands11.jpg",
+        "zodiac": "Aries",
+        "description": "A card representing enthusiasm and exploration."
+    },
+    {
+        "name": "Knight of Wands",
+        "image": "images/Wands12.jpg",
+        "zodiac": "Leo",
+        "description": "A card symbolizing energy and action."
+    },
+    {
+        "name": "Queen of Wands",
+        "image": "images/Wands13.jpg",
+        "zodiac": "Sagittarius",
+        "description": "A card representing confidence and creativity."
+    },
+    {
+        "name": "King of Wands",
+        "image": "images/Wands14.jpg",
+        "zodiac": "Aries",
+        "description": "A card symbolizing leadership and vision."
+    }
+  ]
